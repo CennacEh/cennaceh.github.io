@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        video {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+        }
+        #playButton {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button id="playButton">Play Video</button>
+
+    <script>
+        const video = document.getElementById("video");
+        const playButton = document.getElementById("playButton");
+
+        function startVideo() {
+            video.play()
+                .then(() => playButton.style.display = "none") // Hide button after playback starts
+                .catch(err => console.error("Autoplay failed:", err));
+        }
+
+        // Try to autoplay immediately
+        document.addEventListener("DOMContentLoaded", () => {
+            video.play().catch(() => {
+                playButton.style.display = "block"; // Show button if autoplay fails
+            });
+        });
+
+        // Play when user clicks the button
+        playButton.addEventListener("click", startVideo);
+    </script>
+</body>
+</html>

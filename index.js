@@ -7,7 +7,6 @@ const PORT = 3001;
 
 app.use(express.static("public"));
 app.use("/.well-known", express.static(path.join(__dirname, "public", ".well-known")));
-app.use("/minecraftfont", express.static(path.join(__dirname, "public", "minecraft_font.ttf")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));

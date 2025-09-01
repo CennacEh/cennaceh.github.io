@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Cennac.html</title>
     <p>hi.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/D7TkL6MYbcw?si=tMmvfPGY25XrdSIv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>aproches u menacingly</p>
 </head>
+
 <body>
-    
+    <div class="body">
+        <p>So like I'm a very good minecraft bedrock addons maker guy, yeah man suprising I'm aware.</p>
+        <p>Wanna see my addons? No thanks.</p>
+        <button id="github">Github</button>
+        <button id="discord">Discord</button>
+        <p id="add" hidden="true">or you can add my user: cennac2</p>
+        <p id="cen">Cennac owns this website</p>
+    </div>
 </body>
+<script>
+    document.getElementById("github").addEventListener("click", function () {
+        window.open("https://github.com/CennacEh", "_blank"); 
+        
+    });
+    document.getElementById("discord").addEventListener("click", function () {
+        window.open("https://discord.com/users/1147510275063423080", "_blank");
+    });
+    document.getElementById("github").addEventListener("mouseover", function () {
+        document.getElementById("github").style.color = "blue";
+    });
+    document.getElementById("github").addEventListener("mouseout", function () {
+        document.getElementById("github").style.color = "green";
+    });
+    document.getElementById("discord").addEventListener("mouseover", function () {
+        document.getElementById("discord").style.color = "blue";
+        document.getElementById("add").hidden = false;
+    });
+    document.getElementById("discord").addEventListener("mouseout", function () {
+        document.getElementById("discord").style.color = "green";
+        document.getElementById("add").hidden = true;
+    });
+</script>
+<style>
+    #github {
+        color: green;
+        cursor: pointer;
+        border: 2px solid black;
+        padding: 10px;
+        position: absolute;
+        left: 70px;
+        top: 160px;
+    }
+    #discord {
+        color: green;
+        cursor: pointer;
+        border: 2px solid black;
+        padding: 10px;
+        position: absolute;
+        left: 140px;
+        top: 160px;
+    }
+    #add {
+        font-size: 12px;
+        position: absolute;
+        left: 100px;
+        top: 190px;
+    }
+    body {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    #cen {
+        font-size: 12px;
+        position: absolute;
+        left: 43%;
+        top: 93%;
+    }
+</style>
+
 </html>
